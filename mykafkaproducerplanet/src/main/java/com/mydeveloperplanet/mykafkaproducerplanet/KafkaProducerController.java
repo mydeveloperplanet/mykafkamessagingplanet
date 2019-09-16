@@ -22,7 +22,7 @@ public class KafkaProducerController {
 
         Producer<String, String> producer = new KafkaProducer<>(props);
         for (int i = 0; i < 100; i++) {
-            producer.send(new ProducerRecord<String, String>("my-kafka-topic", Integer.toString(counter), Integer.toString(counter)),
+            producer.send(new ProducerRecord<String, String>("my-kafka-topic-2-partitions", Integer.toString(counter), Integer.toString(counter)),
 
                     (metadata, e) -> {
                         if(e != null) {
